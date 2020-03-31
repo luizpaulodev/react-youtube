@@ -1,6 +1,8 @@
 import youtubeSearch from 'youtube-api-v3-search';
 import YTApi from '../../api';
 
+import { reproduzVideo } from './reproduz-video'
+
 const API_KEY = YTApi;
 
 export const buscaVideoInicio = () => {
@@ -33,7 +35,10 @@ export const buscaVideo = (termo) => {
     dispatch(buscaVideoInicio());
 
     youtubeSearch(API_KEY, { q: termo })
-      .then((data) => dispatch(buscaVideoSucesso(data.items)))
+      .then((data) => {
+        dispatch(buscaVideoSucesso(data.items));
+        dispatch(reproduzVideo(data.items[0]))
+      })
       .catch(() => dispatch(buscaVideoErro()));
   }
 }

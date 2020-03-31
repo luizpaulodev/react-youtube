@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Segment, Input } from 'semantic-ui-react';
 
-function SearchBar() {
+function SearchBar(props) {
+
+  useEffect(() => {
+    props.buscaVideo('React com Redux')
+  }, [props]);
 
   function pesquisaTermo(e) {
     if(e.keyCode === 13) {
       const termo = e.target.value;
-      console.log(termo);
+      
+      props.buscaVideo(termo);
     }
   }
 
@@ -23,4 +28,4 @@ function SearchBar() {
   )
 }
 
-export default SearchBar
+export default SearchBar;

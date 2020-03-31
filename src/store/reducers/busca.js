@@ -4,7 +4,7 @@ const initialState = {
   erro: false
 }
 
-export default function busca(state = initialState, action) {
+export default function buscaVideos(state = initialState, action) {
   switch(action.type) {
     case 'BUSCA_VIDEO_INICIO':
       return {

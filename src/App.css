@@ -7,15 +7,17 @@
 
 .search-bar {
   grid-area: search-bar;
-  background: red;
 }
 
 .video-player {
   grid-area: video-player;
-  background: green;
+  /* width: 70vh; */
+  padding: 15px;
 }
 
 .video-list {
   grid-area: video-list;
-  background: blue;
+  /* width: 30vh; */
+  max-width: 200px;
+  padding: 15px;
 }
