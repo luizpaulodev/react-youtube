@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import busca from './busca';
-import reproduz from './reproduz';
+import busca from './BuscarVideoDuck';
+import reproduz from './ReproduzirVideoDuck';
 
 const rootReducer = combineReducers({
   busca,

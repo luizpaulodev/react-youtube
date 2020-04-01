@@ -28,7 +28,7 @@ const VideoList = props => {
     <div className="video-list">
 
       {props.carregando && carregando()}
-
+      
       <List verticalAlign='middle'>
         {props.videos.map(video => renderVideo(video))}
       </List>

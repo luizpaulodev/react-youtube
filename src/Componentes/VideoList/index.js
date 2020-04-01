@@ -1,17 +1,19 @@
 import VideoList from './VideoList';
 import { connect } from 'react-redux';
-import { reproduzVideo } from '../../store/actions/reproduz-video';
+import { reproduzirVideo } from '../../store/ducks/ReproduzirVideoDuck';
 
 const mapDispatchToProps = dispatch => {
   return {
-    reproduz: video => dispatch(reproduzVideo(video))
+    reproduz: video => dispatch(reproduzirVideo(video))
   }
 }
 
-const mapStateToProps = state => ({
-  videos: state.busca.videos,
-  carregando: state.busca.carregando,
-  erro: state.busca.erro
-});
+const mapStateToProps = state => {
+  return ({
+    videos: state.busca.videos,
+    carregando: state.busca.carregando,
+    erro: state.busca.erro
+  });
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoList);
